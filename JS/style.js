@@ -1,3 +1,30 @@
+
+function input1(inputId){
+    document.getElementById(inputId).addEventListener('keydown',function(){
+            const userEmail = document.getElementById(inputId)
+            const userEmailString = userEmail.value;
+            console.log(userEmailString);
+            const split = userEmailString.split(' ')
+            console.log(split)
+            let splitLength = split.length;
+            if(splitLength == 1){               
+            }
+            else{
+                document.getElementById(inputId).style.backgroundColor ="pink"
+                document.getElementById(inputId).style.color ="Red"
+                document.getElementById(inputId).style.border ="1px solid red"
+                document.getElementById(inputId).style.outline ="1px solid red"              
+            }
+        })
+}
+const incomeField = input1('input-field');
+const foodField = input1('food-field');
+const rentField = input1('rent-field');
+const clothesField = input1('cloths-field');   
+
+
+
+
 function btnCalculate(idField){
     const nameField = document.getElementById(idField);
     const nameFieldValue = parseInt(nameField.value);
@@ -29,9 +56,6 @@ document.getElementById('btn-calculate').addEventListener('click',function(){
     const foodField = btnCalculate('food-field');
     const rentField = btnCalculate('rent-field');
     const clothesField = btnCalculate('cloths-field');
-
-    
-
     const expenseTotal = foodField + rentField + clothesField;
     const remainingCost = incomeField - expenseTotal;
     if(remainingCost>0){
@@ -53,3 +77,38 @@ function saveMoney(){
     }
 }
 
+document.getElementById('saving-btn').addEventListener('click',function(){
+    const nameField = document.getElementById('name-field');
+    const nameFieldInnerText = nameField.value;
+    console.log(nameFieldInnerText)
+
+    const incomeField = btnCalculate('input-field');
+    console.log(incomeField);
+
+    const expenses = document.getElementById('expenses');
+    const expensesStringValue = expenses.innerText;
+    console.log(expensesStringValue);
+
+    const savingAmount = document.getElementById('saving-amount');
+    const savingsAmountString = savingAmount.innerText;
+    console.log(savingsAmountString)
+
+    const remainingAmount = document.getElementById('remaining-amount');
+    const remainingAmountString = remainingAmount.innerText;
+    console.log(remainingAmountString)
+
+    const table = document.getElementById('second-table');
+
+    const tr = document.createElement('tr')
+    console.log(tr)
+
+    tr.innerHTML = `
+        <td>${nameFieldInnerText}</td>
+        <td>${incomeField}</td>
+        <td>${expensesStringValue}</td>
+        <td>${savingsAmountString}</td>
+        <td>${remainingAmountString}</td>
+    `
+    table.appendChild(tr)
+    console.log(table.innerHTML)
+})
