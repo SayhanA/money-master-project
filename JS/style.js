@@ -2,12 +2,15 @@ function btnCalculate(idField){
     const nameField = document.getElementById(idField);
     const nameFieldValue = parseInt(nameField.value);
     if(isNaN(nameFieldValue)){
-        alert('Please type a number')
+        const name =nameField.parentNode.parentNode.children[0].innerText;
+        // alert('(' +name + ')'+ ' ' +'input will be a number',"success")
+        swal('(' +name + ')'+ ' ' +'is not a number', "please input a number");
+        document.getElementById(idField).value = ''
     }
     else{
         return nameFieldValue
     }
-    return nameFieldValue
+    return nameFieldValue;  
 }
 
 document.getElementById('btn-calculate').addEventListener('click',function(){
@@ -31,10 +34,11 @@ function saveMoney(){
     const saveField = btnCalculate('save-field');
     if((saveField-100)<0){
         const savedAmount = ((document.getElementById('balance').innerText) * saveField)/100;
-        document.getElementById('saving-amount').innerText = savedAmount;
-        document.getElementById('remaining-amount').innerText = (document.getElementById('balance').innerText) - savedAmount;
+        document.getElementById('saving-amount').innerText = parseFloat(savedAmount).toFixed(2);
+        document.getElementById('remaining-amount').innerText = parseFloat((document.getElementById('balance').innerText) - savedAmount).toFixed(2);
     }
     else{
-        alert('Please type a valid Percentage(%)')
+        document.getElementById('save-field').value = '';
     }
 }
+

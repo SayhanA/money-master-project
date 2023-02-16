@@ -35,12 +35,12 @@
                           <!-- row 1 -->
                             <tr class="leading-3">
                               <th class="py-2 border-0 bg-slate-100" ><p id="" class="text-left">Name:</p> </th>
-                              <td class="py-2 border-0 bg-slate-100"><input id="name-field" type="text" placeholder="Your name" class="bg-slate-100  text-[16px] input input-bordered h-9 border-0 " /></td>
+                              <td class="py-2 border-0 bg-slate-100"><input id="name-field" type="text" placeholder="Your name" class="bg-slate-100  text-[16px] input input-bordered h-9 border-0 " value="Hafiz Ullah" /></td>
                             </tr>
                             <!-- row 2 -->
                             <tr>
                               <th class="py-2 border-0 bg-slate-100"><p id="" class=" text-left">Income:</p> </th>
-                              <td class="py-2 border-0 bg-slate-100"><input id="input-field" type="text" placeholder="$ Your Amount" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0" /></td>
+                              <td class="py-2 border-0 bg-slate-100"><input id="input-field" type="text" placeholder="$ Your Amount" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0" value="10000" /></td>
                             </tr>
                             
                           </tbody>
@@ -53,26 +53,26 @@
                           <!-- row 1 -->
                             <tr class="">
                               <th class="py-2 border-0 bg-slate-100"><p id="" class=" text-left">Food:</p> </th>
-                              <td class="py-2 border-0 bg-slate-100"><input id="food-field" type="text" placeholder="$Food expenses" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0 " /></td>
+                              <td class="py-2 border-0 bg-slate-100"><input id="food-field" type="text" placeholder="$Food expenses" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0 "  value="3000"/></td>
                             </tr>
                             <!-- row 2 -->
                             <tr>
                               <th class="py-2 border-0 bg-slate-100"><p id="" class=" text-left">Rent:</p> </th>
-                              <td class="py-2 border-0 bg-slate-100"><input id="rent-field" type="text" placeholder="$Rent expenses" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0" /></td>
+                              <td class="py-2 border-0 bg-slate-100"><input id="rent-field" type="text" placeholder="$Rent expenses" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0"  value="2000"/></td>
                             </tr>
                             <!-- row 3 -->
                             <tr>
                               <th class="py-2 border-0 bg-slate-100"><p id="" class=" text-left">Clothes:</p> </th>
-                              <td class="py-2 border-0 bg-slate-100"><input id="cloths-field" type="text" placeholder="$Clothes expenses" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0" /></td>
+                              <td class="py-2 border-0 bg-slate-100"><input id="cloths-field" type="text" placeholder="$Clothes expenses" class="bg-slate-100 text-[16px] input input-bordered h-9 border-0" value="500" /></td>
                             </tr>
                           </tbody>
                         </table>
                         <div class="flex justify-center items-center mx-auto"><button id="btn-calculate" class="btn normal-case px-10 text-[16px] mt-5 bg-blue-500">Calculate</button></div>
-                        <h3 class="text-center font-bold mt-3">Total Expenses:<span id="expenses">5000</span></h3>
+                        <h3 class="text-center font-bold mt-3">Total Expenses:<span id="expenses">5500</span></h3>
                         <h3 class="text-center font-bold mt-3">Balance:<span id="balance">4500</span></h3>
                         <div class="flex items-center gap-5 mt-10 w-9/12 mx-auto ">
                           <p id="" class="font-bold">Save:</p>
-                          <input id="save-field" type="text" placeholder="%Saving" class="text-center text-[16px] input input-bordered h-11 bg-slate-200 border-0 w-4/12" />
+                          <input id="save-field" type="text" placeholder="%Saving" class="text-center text-[16px] input input-bordered h-11 bg-slate-200 border-0 w-4/12" value="20"/>
                           <p>%</p>
                           <button onclick="saveMoney()" class="btn normal-case px-8 text-[16px] bg-blue-500">Save</button>
                         </div>
@@ -83,6 +83,7 @@
                 </div>
             </section>
         </main>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="JS/style.js"></script>
     </body>
 </html>
