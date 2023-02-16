@@ -7,7 +7,11 @@ function input1(inputId){
             const split = userEmailString.split(' ')
             console.log(split)
             let splitLength = split.length;
-            if(splitLength == 1){               
+            if(splitLength == 1){   
+                document.getElementById(inputId).style.backgroundColor ="transparent"
+                document.getElementById(inputId).style.color ="black"
+                document.getElementById(inputId).style.border ="0px solid black"
+                document.getElementById(inputId).style.outline ="2px solid #c2c2d6"             
             }
             else{
                 document.getElementById(inputId).style.backgroundColor ="pink"
