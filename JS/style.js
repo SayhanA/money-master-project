@@ -8,6 +8,17 @@ function btnCalculate(idField){
         document.getElementById(idField).value = ''
     }
     else{
+        const splitNaveFieldValues = nameField.value.split('');
+        for(const splitNaveFieldValue of splitNaveFieldValues ){
+            const name =nameField.parentNode.parentNode.children[0].innerText;
+            if(isNaN(splitNaveFieldValue)){
+                document.getElementById(idField).value = ''
+                swal('(' +name + ')'+ ' ' +'is not a number', "please input a number");
+            }
+            else{
+                console.log(false)
+            }
+        }
         return nameFieldValue
     }
     return nameFieldValue;  
