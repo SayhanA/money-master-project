@@ -1,1 +1,3 @@
-console.log('JS file is connected')
+document.getElementById('btn-calculate').addEventListener('click',function(){
+    console.log('ok')
+})

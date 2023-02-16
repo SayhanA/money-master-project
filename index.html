@@ -28,19 +28,19 @@
             <section class="border lg:mx-40">
                 <div class="grid lg:grid-cols-2">
                     <img class=" w-full image-full" src="images/pexels-karolina-grabowska-4386321.jpg" alt="">
-                    <div class="mx-auto ">
+                    <div class="mx-auto bg-slate-100">
                       <h3 class="text-center text-3xl font-bold mt-5">Savings Calculation</h3>
                       <div class="">
-                        <table class="table w-full ml-10 mt-7 border-0 outline-none ">
+                        <table class="table  ml-10 mt-7 border-0 outline-none ">
                           <!-- row 1 -->
-                            <tr>
-                              <th><p id="" class=" text-left">Name:</p> </th>
-                              <td><input type="text" placeholder="Your name" class=" text-[18px] input input-bordered h-9 border-0 " /></td>
+                            <tr class="leading-3">
+                              <th class="py-3 border-0 bg-slate-100" ><p id="" class="text-left">Name:</p> </th>
+                              <td class="py-3 border-0 bg-slate-100"><input type="text" placeholder="Your name" class="bg-slate-100  text-[18px] input input-bordered h-9 border-0 " /></td>
                             </tr>
                             <!-- row 2 -->
                             <tr>
-                              <th><p id="" class=" text-left">Income:</p> </th>
-                              <td><input type="text" placeholder="$ Your Amount" class="text-[18px] input input-bordered h-9 border-0" /></td>
+                              <th class="py-3 border-0 bg-slate-100"><p id="" class=" text-left">Income:</p> </th>
+                              <td class="py-3 border-0 bg-slate-100"><input type="text" placeholder="$ Your Amount" class="bg-slate-100 text-[18px] input input-bordered h-9 border-0" /></td>
                             </tr>
                             
                           </tbody>
@@ -48,33 +48,33 @@
                           <!-- Table 2 -->
                           
                         </table>
-                        <table class="table w-full mt-7 ml-10 border-0 outline-none ">
+                        <table class="table mt-7 ml-10 border-0 outline-none ">
                           <h3 class="text-center text-3xl font-bold mt-5">Expenses</h3>
                           <!-- row 1 -->
                             <tr class="">
-                              <th><p id="" class=" text-left">Food:</p> </th>
-                              <td><input type="text" placeholder="$Food expenses" class="text-[18px] input input-bordered h-9 border-0 " /></td>
+                              <th class="py-3 border-0 bg-slate-100"><p id="" class=" text-left">Food:</p> </th>
+                              <td class="py-3 border-0 bg-slate-100"><input type="text" placeholder="$Food expenses" class="bg-slate-100 text-[18px] input input-bordered h-9 border-0 " /></td>
                             </tr>
                             <!-- row 2 -->
                             <tr>
-                              <th><p id="" class=" text-left">Rent:</p> </th>
-                              <td><input type="text" placeholder="$Rent expenses" class="text-[18px] input input-bordered h-9 border-0" /></td>
+                              <th class="py-3 border-0 bg-slate-100"><p id="" class=" text-left">Rent:</p> </th>
+                              <td class="py-3 border-0 bg-slate-100"><input type="text" placeholder="$Rent expenses" class="bg-slate-100 text-[18px] input input-bordered h-9 border-0" /></td>
                             </tr>
                             <!-- row 3 -->
                             <tr>
-                              <th><p id="" class=" text-left">Clothes:</p> </th>
-                              <td><input type="text" placeholder="$Clothes expenses" class="text-[18px] input input-bordered h-9 border-0" /></td>
+                              <th class="py-3 border-0 bg-slate-100"><p id="" class=" text-left">Clothes:</p> </th>
+                              <td class="py-3 border-0 bg-slate-100"><input type="text" placeholder="$Clothes expenses" class="bg-slate-100 text-[18px] input input-bordered h-9 border-0" /></td>
                             </tr>
                           </tbody>
                         </table>
-                        <div class="flex justify-center items-center mx-auto"><button class="btn normal-case px-10 text-[18px] mt-5 bg-blue-500">Calculate</button></div>
+                        <div class="flex justify-center items-center mx-auto"><button id="btn-calculate" class="btn normal-case px-10 text-[18px] mt-5 bg-blue-500">Calculate</button></div>
                         <h3 class="text-center font-bold mt-5">Total Expenses:<span>5000</span></h3>
                         <h3 class="text-center font-bold mt-5">Balance:<span>4500</span></h3>
-                        <div class="flex justify-center items-center gap-5 mt-10">
+                        <div class="flex items-center gap-5 mt-10 w-9/12 mx-auto ">
                           <p id="" class="font-bold">Save:</p>
-                          <input type="text" placeholder="%Saving" class="text-center text-[18px] input input-bordered h-11 bg-slate-200 border-0 w-3/12" />
+                          <input type="text" placeholder="%Saving" class="text-center text-[18px] input input-bordered h-11 bg-slate-200 border-0 w-4/12" />
                           <p>%</p>
-                          <button class="btn normal-case px-5 text-[18px] bg-blue-500">Calculate</button>
+                          <button id="btn-calculate" class="btn normal-case px-8 text-[18px] bg-blue-500">Save</button>
                         </div>
                         <h3 class="text-center font-bold mt-5">Saving Amount:<span>2000</span></h3>
                         <h3 class="text-center font-bold mt-5">Remaining Balance:<span>2500</span></h3>
