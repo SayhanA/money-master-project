@@ -1,13 +1,12 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles/style.css">
-  
-  <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="styles/style.css">
+        <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -17,16 +16,111 @@
         }
       }
     }
-  </script>
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline text-clifford">
-    Hello world!
-  </h1>
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1 class="mt-8 text-5xl font-bold text-clifford text-center text-[#31A5AC]">
+                Money Master💰
+            </h1>
+        </header>
+        <main class="container mx-auto my-10">
+            <section class="border lg:mx-40">
+                <div class="grid lg:grid-cols-2">
+                    <img class=" w-full image-full" src="images/pexels-karolina-grabowska-4386321.jpg" alt="">
+                    <div class="mx-auto ">
+                      <h3 class="text-center text-3xl font-bold mt-5">Savings Calculation</h3>
+                      <div class="overflow-x-auto">
+                        <table class="table w-full mt-7 border-0 outline-none ">
+                          <!-- row 1 -->
+                            <tr>
+                              <th><p id="person" class=" text-xl text-left">Name:</p> </th>
+                              <td><input type="text" placeholder="Your name" class="text-[18px] input input-bordered h-9 border-0 " /></td>
+                            </tr>
+                            <!-- row 2 -->
+                            <tr>
+                              <th><p id="person" class=" text-xl text-left">Income:</p> </th>
+                              <td><input type="text" placeholder="$ Your Amount" class="text-[18px] input input-bordered h-9 border-0" /></td>
+                            </tr>
+                            
+                          </tbody>
 
-  <button class="btn btn-primary">Button</button>
-  <button class="btn btn-warning">Warning</button>
-
-  <script src="JS/style.js"></script>
-</body>
+                          <!-- Table 2 -->
+                          
+                        </table>
+                        <table class="table w-full mt-7 border-0 outline-none ">
+                          <h3 class="text-center text-3xl font-bold mt-5">Expenses</h3>
+                          <!-- row 1 -->
+                            <tr class="">
+                              <th><p id="person" class=" text-xl text-left">Food:</p> </th>
+                              <td><input type="text" placeholder="$Food expenses" class="text-[18px] input input-bordered h-9 border-0 " /></td>
+                            </tr>
+                            <!-- row 2 -->
+                            <tr>
+                              <th><p id="person" class=" text-xl text-left">Rent:</p> </th>
+                              <td><input type="text" placeholder="$Rent expenses" class="text-[18px] input input-bordered h-9 border-0" /></td>
+                            </tr>
+                            <!-- row 3 -->
+                            <tr>
+                              <th><p id="person" class=" text-xl text-left">Clothes:</p> </th>
+                              <td><input type="text" placeholder="$Clothes expenses" class="text-[18px] input input-bordered h-9 border-0" /></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="flex justify-center items-center mx-auto"><button class="btn normal-case px-10 text-[18px] mt-5 bg-blue-500">Calculate</button></div>
+                        <h3 class="text-center text-xl font-bold mt-5">Total Expenses:<span>5000</span></h3>
+                        <h3 class="text-center text-xl font-bold mt-5">Balance:<span>4500</span></h3>
+                        <div class="flex justify-center items-center gap-5 mt-10">
+                          <p id="person" class=" text-xl text-left">save:</p>
+                          <input type="text" placeholder="%Saving" class="text-[18px] input input-bordered h-11 bg-slate-200 border-0 w-3/12" />
+                          <p>%</p>
+                          <button class="btn normal-case px-5 text-[18px] bg-blue-500">Calculate</button>
+                        </div>
+                        <h3 class="text-center text-xl font-bold mt-5">Saving Amount:<span>2000</span></h3>
+                        <h3 class="text-center text-xl font-bold mt-5">Remaining Balance:<span>2500</span></h3>
+                      </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="JS/style.js"></script>
+    </body>
 </html>
+
+
+
+
+
+<!-- <div class="mx-10">
+  <div class="mx-24">
+    <h3 class="text-center text-3xl font-bold mt-5">Savings Calculation</h3>
+    <div class="flex text-xl pt-[30px] items-center gap-3">
+      <p id="person" class="">Name:</p>
+      <input type="text" placeholder="Your name" class="text-xl input input-bordered h-9 w-6/12 border-0 " />
+    </div>
+    <div class="flex text-xl pt-[10px] items-center gap-3">
+      <p id="person" class="">Income:</p>
+      <input type="text" placeholder="$ Your Amount" class="text-xl input input-bordered h-9 w-6/12 border-0" />
+    </div>
+
+    
+    <!-- Expenses Part -->
+
+  <!-- </div>
+  <div class="mx-24 mt-10">
+    <h3 class="text-center text-3xl font-bold mt-5">Expenses</h3>
+    <div class="flex text-xl pt-[30px] items-center gap-3">
+      <p id="person" class="">Food:</p>
+      <input type="text" placeholder="Your name" class="text-xl input input-bordered h-9 w-6/12 border-0 " />
+    </div>
+    <div class="flex text-xl pt-[10px] items-center gap-3">
+      <p id="person" class="">Rent:</p>
+      <input type="text" placeholder="$ Your Amount" class="text-xl input input-bordered h-9 w-6/12 border-0" />
+    </div>
+    <div class="flex text-xl pt-[10px] items-center gap-3">
+      <p id="person" class="">Clothes:</p>
+      <input type="text" placeholder="$ Your Amount" class="text-xl input input-bordered h-9 w-6/12 border-0" />
+    </div>
+
+  </div>
+</div> --> -->
