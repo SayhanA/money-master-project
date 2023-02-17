@@ -21,9 +21,7 @@ function btnCalculate(idField){
                 console.log(document.getElementById(idField).classList)
             }
             else{
-                // document.getElementById(idField).value = ''
-                document.getElementById(idField).focus()
-                // console.log(document.getElementById(idField).classList.add("input-success"))
+
             }
         }
         return nameFieldValue
