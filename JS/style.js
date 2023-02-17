@@ -1,41 +1,10 @@
-
-function input1(inputId){
-    document.getElementById(inputId).addEventListener('keydown',function(){
-            const userEmail = document.getElementById(inputId)
-            const userEmailString = userEmail.value;
-            console.log(userEmailString);
-            const split = userEmailString.split(' ')
-            console.log(split)
-            let splitLength = split.length;
-            if(splitLength == 1){   
-                document.getElementById(inputId).style.backgroundColor ="transparent"
-                document.getElementById(inputId).style.color ="black"
-                document.getElementById(inputId).style.border ="0px solid black"
-                document.getElementById(inputId).style.outline ="2px solid #c2c2d6"             
-            }
-            else{
-                document.getElementById(inputId).style.backgroundColor ="pink"
-                document.getElementById(inputId).style.color ="Red"
-                document.getElementById(inputId).style.border ="1px solid red"
-                document.getElementById(inputId).style.outline ="1px solid red"              
-            }
-        })
-}
-const incomeField = input1('input-field');
-const foodField = input1('food-field');
-const rentField = input1('rent-field');
-const clothesField = input1('cloths-field');   
-
-
-
-
 function btnCalculate(idField){
     const nameField = document.getElementById(idField);
     const nameFieldValue = parseInt(nameField.value);
     if(isNaN(nameFieldValue)){
         const name =nameField.parentNode.parentNode.children[0].innerText;
-        // alert('(' +name + ')'+ ' ' +'input will be a number',"success")
-        swal('(' +name + ')'+ ' ' +'is not a number', "please input a number");
+        alert('(' +name + ')'+ ' ' +'input will be a number',"success")
+        // swal('(' +name + ')'+ ' ' +'is not a number', "please input a number");
         document.getElementById(idField).value = ''
     }
     else{
@@ -43,11 +12,18 @@ function btnCalculate(idField){
         for(const splitNaveFieldValue of splitNaveFieldValues ){
             const name =nameField.parentNode.parentNode.children[0].innerText;
             if(isNaN(splitNaveFieldValue)){
-                document.getElementById(idField).value = ''
-                swal('(' +name + ')'+ ' ' +'is not a number', "please input a number");
+                document.getElementById(idField).value = '';
+                document.getElementById(idField).focus()
+                // swal('(' +name + ')'+ ' ' +'is not a number', "please input a number");
+                alert('(' +name + ')'+ ' ' +'input will be a number')
+                console.log(document.getElementById(idField).classList)
+                console.log(document.getElementById(idField).classList.replace('input-error','input-success')) 
+                console.log(document.getElementById(idField).classList)
             }
             else{
-                console.log(false)
+                // document.getElementById(idField).value = ''
+                document.getElementById(idField).focus()
+                // console.log(document.getElementById(idField).classList.add("input-success"))
             }
         }
         return nameFieldValue
@@ -66,6 +42,10 @@ document.getElementById('btn-calculate').addEventListener('click',function(){
         document.getElementById('expenses').innerText = expenseTotal;
         document.getElementById('balance').innerText = remainingCost;
     }
+    else{
+        alert('cut your coat according to your cloth')
+        return 
+    }
     return remainingCost;
 })
 
@@ -78,41 +58,42 @@ function saveMoney(){
     }
     else{
         document.getElementById('save-field').value = '';
+        if(saveField === 100){
+            return alert('You can not save 100% of Your BalanceF')
+        }
+        else{
+            return alert('Please a type a valid percentage(%)')
+        }
     }
 }
 
-document.getElementById('saving-btn').addEventListener('click',function(){
-    const nameField = document.getElementById('name-field');
-    const nameFieldInnerText = nameField.value;
-    console.log(nameFieldInnerText)
 
-    const incomeField = btnCalculate('input-field');
-    console.log(incomeField);
+/* ---------------------------input character spell checker starts here------------------------------*/
+function input1(inputId){
+    document.getElementById(inputId).addEventListener('keyup',function(){
+            const userEmail = document.getElementById(inputId)
+            const userEmailString = userEmail.value;
+            const split = userEmailString.split(' ');
+            // console.log(split)
 
-    const expenses = document.getElementById('expenses');
-    const expensesStringValue = expenses.innerText;
-    console.log(expensesStringValue);
+            // character(NaN) finding section starts
+            const stringCharacter = userEmailString[userEmailString.length - 1]
+            const firstCharacter =  parseInt(userEmailString[0])
+            // character(NaN) finding section ends
 
-    const savingAmount = document.getElementById('saving-amount');
-    const savingsAmountString = savingAmount.innerText;
-    console.log(savingsAmountString)
+            let splitLength = split.length;
+            if(splitLength == 1 && isNaN(parseInt(stringCharacter)) == false && isNaN(firstCharacter) === false){   
+                console.log(document.getElementById(inputId).classList.replace('input-error','input-primary'))            
+            }
+            else{
+                console.log(document.getElementById(inputId).classList.add("input-error"))              
+            }
+        })
+}
+const incomeField = input1('input-field');
+const foodField = input1('food-field');
+const rentField = input1('rent-field');
+const clothesField = input1('cloths-field');   
+const saveField = input1('save-field');   
 
-    const remainingAmount = document.getElementById('remaining-amount');
-    const remainingAmountString = remainingAmount.innerText;
-    console.log(remainingAmountString)
-
-    const table = document.getElementById('second-table');
-
-    const tr = document.createElement('tr')
-    console.log(tr)
-
-    tr.innerHTML = `
-        <td>${nameFieldInnerText}</td>
-        <td>${incomeField}</td>
-        <td>${expensesStringValue}</td>
-        <td>${savingsAmountString}</td>
-        <td>${remainingAmountString}</td>
-    `
-    table.appendChild(tr)
-    console.log(table.innerHTML)
-})
+/* ---------------------------input character spell checker ends here------------------------------*/
